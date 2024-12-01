@@ -5,7 +5,7 @@ function formatResponse(response) {
 }
 
 async function handleImage(api, event, imageUrl, query, thinkingMessageID) {
-  const geminiUrl = `https://deku-rest-api.gleeze.com/gemini?prompt=${encodeURIComponent(query)}&url=${encodeURIComponent(imageUrl)}`;
+  const geminiUrl = `https://vneerapi.onrender.com/ai?prompt=${encodeURIComponent(query)}&url=${encodeURIComponent(imageUrl)}`;
   const { data } = await axios.get(geminiUrl);
   const formattedResponse = `🤖 | 𝗖𝗛𝗔𝗧-𝗚𝗣𝗧-𝟰𝗢
 ━━━━━━━━━━━━━━━━━━
@@ -36,7 +36,7 @@ module.exports = {
 
     const query = args.join(" ");
     const userId = event.senderID;
-    const apiUrl = `https://deku-rest-api.gleeze.com/api/gpt-4o?q=${encodeURIComponent(query)}&uid=${userId}`;
+    const apiUrl = `https://vneerapi.onrender.com/ai?prompt=${encodeURIComponent(query)}&uid=${userId}`;
 
     try {
       const { data } = await axios.get(apiUrl);
