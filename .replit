@@ -1,0 +1,4 @@
+run = "node index.js"
+
+[deployment]
+run = ["sh", "-c", "node index.js"]
